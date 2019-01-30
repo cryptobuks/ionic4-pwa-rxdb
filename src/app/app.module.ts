@@ -6,7 +6,10 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 import { AppRoutingModule } from './app-routing.module';
+import { environment } from '../environments/environment';
 
 /**
  * PAGES
@@ -32,6 +35,9 @@ import { initDatabase, DatabaseService } from 'src/services/database.service';
     HttpClientModule,
     AppRoutingModule,
     PipesModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.pwa,
+    }),
   ],
   providers: [
     StatusBar,

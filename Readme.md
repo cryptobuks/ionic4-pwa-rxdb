@@ -1,1 +1,1 @@
-Json data from: https://openwhyd.org/hot/electro?format=json
+Data in db.json is from https://openwhyd.org/hot/electro?format=json

@@ -1,5 +1,7 @@
 {
   "name": "pwa-songs",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

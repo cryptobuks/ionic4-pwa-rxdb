@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { DatabaseService } from 'src/services/database.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ToastController } from '@ionic/angular';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tab2',
@@ -24,7 +25,7 @@ export class Tab2Page {
     this.songs$ = this.dbService.db.song // collection
       .find().$; // query
 
-    this.http.get('http://localhost:3000/songs').subscribe(
+    this.http.get(environment.api + 'songs').subscribe(
       (songs: any) => {
         songs.map(song => {
           this.dbService.db.song.atomicUpsert({
