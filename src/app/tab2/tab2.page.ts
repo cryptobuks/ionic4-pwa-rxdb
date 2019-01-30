@@ -24,7 +24,7 @@ export class Tab2Page {
     this.songs$ = this.dbService.db.song // collection
       .find().$; // query
 
-    this.http.get('http://localhost:3000/songsss').subscribe(
+    this.http.get('http://localhost:3000/songs').subscribe(
       (songs: any) => {
         songs.map(song => {
           this.dbService.db.song.atomicUpsert({
